@@ -4,8 +4,7 @@ contains
 
 !==========================================================================
 !       Subrountina para inverter os dados
-!==========================================================================
-        
+!==========================================================================      
         subroutine inv_GN (m, x, d, n, p0, Niter, pk, fk)
         dimension x(m), d(m), p0(n), pk(n), fk(m)
         Allocatable deltp(:), deltd(:), gk(:, :)
@@ -65,7 +64,6 @@ contains
 !==============================================================
 !
         subroutine cg_Xhy(m, n, X, h, y)
-
         dimension X(m, n), y(m), h(n)
         allocatable A(:,:), b(:)
         allocate (A(n,n), b(n))
@@ -80,8 +78,7 @@ contains
         
 !===============================================================
 !       Subroutina para calculo do gradiente
-!===============================================================
-    
+!===============================================================  
         subroutine cg_Ahb(n, A, h, b)
         dimension A(n,n), h(n), b(n)
         allocatable g(:), p(:), v(:)
@@ -113,12 +110,9 @@ contains
         deallocate(g, v, p)
         return
         end
-
-
 !=============================================================
 !               Subroutina multiplicação de matriz
 !=============================================================
-
         subroutine mult_xtx_xty(m, n, x, y, a, b)
         dimension x(m,n), y(m), a(n,n), b(n)
         do j=1, n
@@ -130,5 +124,4 @@ contains
         end do
         return
         end
-
 end module inv
